@@ -1,0 +1,13 @@
+.error-msg {
+    background-color: rgba(255, 0, 0, 0.712);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 70px;
+}
+
+body {
+    background-image: linear-gradient(to right,rgb(190, 176, 176), rgb(168, 172, 175), rgb(190, 176, 176));
+}
