@@ -20,7 +20,7 @@ class ForexConverterTestCase(TestCase):
             html = res.get_data(as_text=True)
 
             self.assertEqual(res.status_code, 200)
-            self.assertIn('<h1 class="display-3 text-center mb-5">Forex Currency Converter</h1>', html)
+            self.assertIn('<h1 class="display-1 text-center mb-5">Forex Currency Converter</h1>', html)
 
 
 

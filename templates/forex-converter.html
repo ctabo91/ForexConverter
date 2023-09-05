@@ -8,7 +8,7 @@
     <title>Forex Converter</title>
 </head>
 <body>
-    <h1 class="display-3 text-center mb-5">Forex Currency Converter</h1>
+    <h1 class="display-1 text-center mb-5">Forex Currency Converter</h1>
     <div class="container text-center w-25">
         {% for msg in get_flashed_messages() %}
         <div class="row">
@@ -20,37 +20,37 @@
     </div>
     <form action="/conversion" class="container text-center">
         <div class="row mb-3">
-            <div class="col-3">
+            <div class="col-1">
 
             </div>
-            <div class="col-3">
+            <div class="col-5">
                 <select id="start-curr" class="form-input form-control text-center" name="start-curr">
                     <option value="" disabled selected>Currency Converting From</option>
-                    {% for code in codes %}
-                    <option value="{{code}}">{{code}}</option>
+                    {% for code, description in codes.items() %}
+                    <option value="{{code}}">{{code}} ({{description}})</option>
                     {% endfor %}
                 </select>
             </div>
-            <div class="col-3">
+            <div class="col-5">
                 <select id="end-curr" class="form-input form-control text-center" name="end-curr">
                     <option value="" disabled selected>Currency Converting To</option>
-                    {% for code in codes %}
-                    <option value="{{code}}">{{code}}</option>
+                    {% for code, description in codes.items() %}
+                    <option value="{{code}}">{{code}} ({{description}})</option>
                     {% endfor %}
                 </select>
             </div>
-            <div class="col-3">
+            <div class="col-1">
                     
             </div>
         </div>
         <div class="row mb-3">
-            <div class="col-4">
+            <div class="col-3">
 
             </div>
-            <div class="col-4">
+            <div class="col-6">
                 <input id="amount" class="form-input form-control text-center" name="amount" placeholder="Amount Converting">
             </div>
-            <div class="col-4">
+            <div class="col-3">
 
             </div>
         </div>
@@ -69,9 +69,6 @@
         <a href="/" class="btn btn-info mt-4">Clear Result</a>
         {% endif %}
     </div>
-    
-    <!-- <div class="text-center mt-4">
-        <a href="/" class="btn btn-info">Refresh</a>
-    </div> -->
+
 </body>
 </html>
