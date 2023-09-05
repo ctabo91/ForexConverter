@@ -3,15 +3,17 @@ import requests
 
 
 def get_currency_codes():
-    """"""
+    """Gets 3 letter currency codes, and puts them in a list"""
+
     symbol_res = requests.get('https://api.exchangerate.host/symbols')
     symbol_data = symbol_res.json()
     symbols = symbol_data['symbols']
 
-    codes = []
+    codes = {}
 
-    for key in symbols.keys():
-        codes.append(key)
+    for key, value in symbols.items():
+        codes[key] = value['description']
+
 
     return codes
 
